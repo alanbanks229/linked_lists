@@ -31,20 +31,6 @@ class LinkedList
         end
     end
 
-    def print_list()
-        elements = []
-        current_node = @head
-        while current_node
-            elements.append(current_node)
-            current_node = current_node.next_node
-        end
-        elements.each do |item, index|
-            item.next_node != nil ?
-            (puts "Node #{item}: Value = #{item.value} || next_node = #{item.next_node}") :
-            (puts "Node #{item}: Value = #{item.value} || next_node = Null")
-        end
-    end
-
     def delete_value(value)
         current_node = @head
         if current_node.value == value
@@ -65,6 +51,22 @@ class LinkedList
             end
             # iterate
             current_node = current_node.next_node
+        end
+    end
+
+    def print_list()
+        elements = []
+        current_node = @head
+        while current_node
+            elements.append(current_node)
+            current_node = current_node.next_node
+        end
+        elements.each do |item, index|
+            # ternary operator for conditional print statements
+            item.next_node != nil ?
+                (puts "Node #{item}: Value = #{item.value} || next_node = #{item.next_node}")
+                :
+                (puts "Node #{item}: Value = #{item.value} || next_node = Null")
         end
     end
 
