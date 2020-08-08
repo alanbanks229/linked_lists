@@ -13,17 +13,18 @@ class LinkedList
 
     def append_to_tail(value)
         current_node = @head
-        puts "attempting to add #{value}"
-        # at this step current node is the first node
+        # at this step this instance of the linked list currently
+        # does not have a head node, so we add #{value} as head
         if current_node == nil
-            puts "this linked list currently doesn't have head, adding #{value} as head\n"
             current_node = Node.new(value)
             @head = current_node
         else
+            # while the current node iteration has a next node
             while (current_node.next_node != nil)
                 current_node = current_node.next_node
             end
-            puts "reached end of linked list, appending value\n"
+            # hitting this line below means we've reached a point where
+            # the current node's pointer is null... we are now giving it a value
             current_node.next_node = Node.new(value)
         end
     end
@@ -34,16 +35,20 @@ class LinkedList
         while current_node
             elements.append(current_node)
             current_node = current_node.next_node
-            puts "added node to list"
         end
         elements.each do |item, index|
-            puts "Node #{index}: Value = #{item.value} || next_node = #{item.next_node}"
+            item.next_node != nil ?
+            (puts "Node #{index}: Value = #{item.value} || next_node = #{item.next_node}") :
+            (puts "Node #{index}: Value = #{item.value} || next_node = Null")
         end
     end
+
+    "chocolate".size > 4 ? "More than four characters" : "Less than four characters"
 end
 
 linkedlist1 = LinkedList.new()
 linkedlist1.append_to_tail(1)
 linkedlist1.append_to_tail(2)
 linkedlist1.append_to_tail(3)
+linkedlist1.append_to_tail(4)
 linkedlist1.print_list
