@@ -13,6 +13,7 @@ class LinkedList
 
     def append_to_tail(value)
         current_node = @head
+
         # at this step this instance of the linked list currently
         # does not have a head node, so we add #{value} as head
         if current_node == nil
@@ -23,6 +24,7 @@ class LinkedList
             while (current_node.next_node != nil)
                 current_node = current_node.next_node
             end
+
             # hitting this line below means we've reached a point where
             # the current node's pointer is null... we are now giving it a value
             current_node.next_node = Node.new(value)
@@ -43,7 +45,10 @@ class LinkedList
         end
     end
 
-    "chocolate".size > 4 ? "More than four characters" : "Less than four characters"
+    def delete_value(value)
+        current_node = @head
+    end
+
 end
 
 linkedlist1 = LinkedList.new()
