@@ -48,6 +48,7 @@ class LinkedList
                     # if matching node does not have pointer...
                     current_node.next_node = nil
                 end
+                return puts "found node, updated linkedlist"
             end
             # iterate
             current_node = current_node.next_node
@@ -77,5 +78,5 @@ linkedlist1.append_to_tail(1)
 linkedlist1.append_to_tail(2)
 linkedlist1.append_to_tail(3)
 linkedlist1.append_to_tail(4)
-linkedlist1.delete_value(3)
+linkedlist1.delete_value(4)
 linkedlist1.print_list
