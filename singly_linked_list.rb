@@ -40,13 +40,28 @@ class LinkedList
         end
         elements.each do |item, index|
             item.next_node != nil ?
-            (puts "Node #{index}: Value = #{item.value} || next_node = #{item.next_node}") :
-            (puts "Node #{index}: Value = #{item.value} || next_node = Null")
+            (puts "Node #{item}: Value = #{item.value} || next_node = #{item.next_node}") :
+            (puts "Node #{item}: Value = #{item.value} || next_node = Null")
         end
     end
 
     def delete_value(value)
         current_node = @head
+        if current_node.value == value
+            @head = current_node.next_node
+        end
+
+        while current_node.next_node != nil
+            if current_node.next_node.value == value
+                if current_node.next_node.next_node != nil
+                    current_node.next_node = current_node.next_node.next_node
+                else
+                    current_node.next_node = nil
+                end
+            end
+            current_node = current_node.next_node
+
+        end
     end
 
 end
@@ -56,4 +71,5 @@ linkedlist1.append_to_tail(1)
 linkedlist1.append_to_tail(2)
 linkedlist1.append_to_tail(3)
 linkedlist1.append_to_tail(4)
+linkedlist1.delete_value(3)
 linkedlist1.print_list
