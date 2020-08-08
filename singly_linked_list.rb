@@ -52,15 +52,19 @@ class LinkedList
         end
 
         while current_node.next_node != nil
+            # If the next node has a value that matches the parameter
             if current_node.next_node.value == value
+                # if the matching (next) node points to another valid node
                 if current_node.next_node.next_node != nil
+                    # set the current node's pointer to be the NEXT, NEXT, Node
                     current_node.next_node = current_node.next_node.next_node
                 else
+                    # if matching node does not have pointer...
                     current_node.next_node = nil
                 end
             end
+            # iterate
             current_node = current_node.next_node
-
         end
     end
 
