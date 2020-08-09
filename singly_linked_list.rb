@@ -62,7 +62,6 @@ class LinkedList
                 (puts "Node #{item}: Value = #{item.value} || next_node = Null")
         end
     end
-
 end
 
 linkedlist1 = LinkedList.new(1)
