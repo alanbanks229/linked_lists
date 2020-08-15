@@ -20,12 +20,18 @@ class LinkedList:
         while current:
             print(current, "\nvalue: ", current.value, "\nnext: ", current.next, "\n")
             current = current.next
+
+    def insertBeginning(self, value):
+        NewNode = Node(value)
+        NewNode.next = self.head
+        self.head = NewNode
         
 
 
 linkedlist1 = LinkedList(2)
 linkedlist1.append(3)
 linkedlist1.append(5)
+linkedlist1.insertBeginning(1)
 linkedlist1.print_list()
 # linkedlist1.append(3)
 # linkedlist1.print_list()
