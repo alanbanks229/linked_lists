@@ -7,7 +7,6 @@ class LinkedList:
 
     def __init__(self, value):
         self.head = Node(value)
-        # self.head.next = None
 
     def append(self, value):
         current = self.head
@@ -26,6 +25,7 @@ class LinkedList:
 
 linkedlist1 = LinkedList(2)
 linkedlist1.append(3)
+linkedlist1.append(5)
 linkedlist1.print_list()
 # linkedlist1.append(3)
 # linkedlist1.print_list()
