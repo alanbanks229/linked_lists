@@ -1,13 +1,13 @@
 class Node:
-  def __init__(self, int_value):
-    self.value = int_value
-    self.next = None
+    def __init__(self, int_value):
+        self.value = int_value
+        self.next = None
 
 class LinkedList:
 
     def __init__(self, value):
         self.head = Node(value)
-        self.head.next = None
+        # self.head.next = None
 
     def append(self, value):
         current = self.head
